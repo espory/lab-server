@@ -1,0 +1,21 @@
+DROP SCHEMA IF EXISTS `aplus-db` ;
+
+
+CREATE SCHEMA IF NOT EXISTS `aplus-db` DEFAULT CHARACTER SET utf8mb4 ;
+USE `aplus-db`;
+
+
+DROP TABLE IF EXISTS `aplus-db`.`user` ;
+
+CREATE TABLE IF NOT EXISTS `aplus-db`.`user` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(16) NOT NULL,
+  `password` varchar(200) NOT NULL,
+  `mail` varchar(200) NOT NULL,
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  INDEX `name` (`name` ASC))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8mb4;

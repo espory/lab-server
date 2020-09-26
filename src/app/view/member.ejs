@@ -1,0 +1,193 @@
+<!-- breadcrumb start-->
+<section class="breadcrumb breadcrumb_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb_iner text-center">
+                    <div class="breadcrumb_iner_item">
+                        <h2>Team Members</h2>
+                        <p class="big-screen textleft"><br/>We are a team of researchers and industry practitioners, focusing on cloud computing and mobile computing. <br/>
+                            In particular, we work on new tools, platforms, and concepts towards solving the performance, security, usability, and reliability issues for systems and software in emerging application areas.</p>
+                        <p class="tiny-screen textleft">We are a team of researchers and industry practitioners,
+                            focusing on mobile computing and cloud computing.
+                            </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- breadcrumb start-->
+
+<!-- End banner Area -->
+
+<!-- Start Instructors Area -->
+<div class="whole-wrap">
+    <div class="section-top-border">
+        <h2 class="subsection">Faculty Members:</h2>
+        <br/><br/>
+        <% if(instructors.length > 0){ %>
+            <% for(let i = 0;i < instructors.length;i++){ %>
+                <div class="row teacherIntro">
+                    <div class="col-md-3">
+                        <img src="<%= instructors[i].photo %>" alt="" class="img-fluid" onclick="popupFunc(this, 'instructor', '<%= i %>')" />
+
+                        <h3>
+                            <% if(instructors[i].url != null && instructors[i].url!=''){ %>
+                                <a class="member-name" href="<%= instructors[i].url %>">
+                                <%= instructors[i].name_en %> <br/>(<%= instructors[i].name_cn %>)
+                                </a>
+                            <% } else { %>
+                                <%= instructors[i].name_en %> <br/>(<%= instructors[i].name_cn %>)
+                                <% } %>
+                        </h3>
+
+                    </div>
+                    <div class="col-md-9 mt-sm-20">
+                        <h3><%= instructors[i].job_title %></h3>
+                        <h3><%= instructors[i].institude %></h3>
+                        <% for (let j = 0;j < instructors[i].degree.length;j++){ %>
+                            <h4 class="degree"><%= instructors[i].degree[j] %></h4>
+                        <% } %>
+                        <% for (let j = 0;j < instructors[i].detail.length;j++){ %>
+                            <br/>
+                            <p class="detail"><%= instructors[i].detail[j] %></p>
+                        <% } %>
+                    </div>
+                </div>
+            <% } %>
+        <% } %>
+    </div>
+</div>
+
+<!--start Doctors area-->
+<div class="whole-wrap">
+    <div class="section-top-border">
+        <h2 class="subsection">Ph.D Students</h2>
+        <div class="row">
+            <% if(doctors.length > 0){ %>
+                <% for(let i = 0;i < doctors.length;i++){ %>
+                    <div class="col-md-3">
+                        <img src="<%= doctors[i].photo %>" class="img-fluid" __onclick="popupFunc(this)"/>
+                        <div class="studentmember">
+                            <h4 class="mem-name">
+                                <% if(doctors[i].url != null && doctors[i].url!=''){ %>
+                                    <a class="member-name" href="<%= doctors[i].url %>">
+                                    <%= doctors[i].name_cn %> (<%= doctors[i].name_en %>)
+                                    </a>
+                                <% } else { %>
+                                    <%= doctors[i].name_cn %> (<%= doctors[i].name_en %>)
+                                <% } %>
+                            </h4>
+                            <p class="mem-detail"><%= doctors[i].detail %></p>
+                        </div>
+                    </div>
+                <% } %>
+            <% } %>
+
+        </div>
+    </div>
+</div>
+
+<!--start masters area-->
+<div class="whole-wrap">
+    <div class="section-top-border">
+        <h2 class="subsection">Master Students</h2>
+        <div class="row">
+            <% if(masters.length > 0){ %>
+            <% for(let i = 0;i < masters.length;i++){ %>
+            <div class="col-md-3">
+                <img src="<%= masters[i].photo %>" class="img-fluid" __onclick="popupFunc(this)"/>
+                <div class="studentmember">
+                    <h4 class="mem-name">
+                        <% if(masters[i].url != null && masters[i].url!=''){ %>
+                            <a class="member-name" href="<%= masters[i].url %>">
+                            <%= masters[i].name_cn %> (<%= masters[i].name_en %>)
+                            </a>
+                        <% } else { %>
+                            <%= masters[i].name_cn %> (<%= masters[i].name_en %>)
+                        <% } %>
+                    </h4>
+                    <p class="mem-detail"><%= masters[i].detail %></p>
+                </div>
+            </div>
+            <% } %>
+            <% } %>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="whole-wrap">
+    <div class="section-top-border">
+        <h2 class="subsection">Former Members</h2>
+        <div class="row">
+            <div class="col-lg-12">
+                <blockquote class="generic-blockquote">
+                    <table class="intro">
+                        <tbody>
+                        <% if(formers.length > 0){ %>
+                            <% for (let i = 0;i < formers.length;i++) { %>
+                                <tr>
+                                    <td class="pub" valign="top">
+                                        <% if(formers[i].url != null && formers[i].url!=''){ %>
+                                            <a class="member-name" href="<%= formers[i].url %>">
+                                            <%= formers[i].name_en %> (<%= formers[i].name_cn %>)
+                                            </a>
+                                        <% } else { %>
+                                            <%= formers[i].name_en %> (<%= formers[i].name_cn %>)
+                                        <% } %>
+                                    </td>
+                                    <td class="pub"><%= formers[i].degree %> <br/><%= formers[i].detail %></td>
+                                </tr>
+                            <% } %>
+                        <% } %>
+                        </tbody>
+                    </table>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="popup" class="popup-window">
+    <div class="popup-block" onclick="document.getElementById('popup').style.display='none'">
+        <!-- content -->
+        <img id="img01" class="popup-img" src="">
+        <!-- caption -->
+        <div id="popup-detail"></div>
+    </div>
+</div>
+
+
+<script>
+    var popupWindow = document.getElementById('popup');
+    var popupImg = document.getElementById("img01");
+    function popupFunc(th, type, index){
+        let member;
+        switch (type) {
+            case 'instructor':
+                member = <% instructors %>[index];
+                break;
+            case 'doctor':
+                member = <% doctors %>[index];
+                break;
+            case 'master':
+                member = <% masters %>[index];
+                break;
+        }
+        popupWindow.style.display = "block";
+        popupImg.src = th.src;
+        //popupWindow.innerHTML = member.name_cn;
+    }
+    /*
+    $(document).ready(function(){
+        $(".img-fluid").click(function(){
+            $("#popup").style.display = "block";
+        });
+    });
+    */
+</script>

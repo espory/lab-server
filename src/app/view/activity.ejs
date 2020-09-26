@@ -1,0 +1,29 @@
+<!--activities-->
+<section class="service_part activities">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12 banner_text">
+                <div class="single_service_text">
+                    <h2>2018.05——团建</h2>
+                </div>
+
+                <div class="card-columns">
+                    <%if(activities.length>0){%>
+                    <%for(let i=0;i<activities.length;i++){%>
+                        <div class="card">
+                            <img src="<%= activities[i].image %>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <a href="#">
+                                    <h4 class="card-title"><%= activities[i].title %></h4>
+                                </a>
+                                <p class="card-text"><%= activities[i].detail %></p>
+                            </div>
+                        </div>
+                    <%}%>
+                    <%}%>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- activities-->

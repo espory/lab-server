@@ -1,0 +1,115 @@
+<!-- breadcrumb start-->
+<!--section class="breadcrumb breadcrumb_bg" -->
+
+
+
+<section class="service_part section_padding home_banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb_iner text-center">
+                    <div class="breadcrumb_iner_item">
+                        <br/>
+                        <h2 class="title"><%= lab_name %></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="service_part  ">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="single_service_text">
+                    <h2 class="subsection">简介 - About Us</h2>
+                    <p class="big-screen intro">
+                        We are a team of researchers and industry practitioners, focusing on cloud computing and mobile computing.
+                        In particular, we work on new tools, platforms, and concepts towards solving the performance, security, usability, and reliability issues for systems and software in emerging application areas.
+                        <br/><br/>
+                    </p>
+                    <p class="big-screen intro">
+                        <%= lab_intro %>
+                        <br/> <br/>
+                    </p>
+                    <p class="big-screen intro">
+                        <%= team_intro %>
+                    </p>
+
+                    <p class="tiny-screen intro">
+                        <%= lab_intro %>
+                     </p>
+                    <br/>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="service_part  ">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="single_service_text">
+                    <h2 class="subsection">新闻 - Updates</h2><br/>
+                    <ul class="col-sm-12 col-xl-12 news">
+                        <%for(let i=0;i<newsDatas.length;i++){%>
+                        <li>
+                            <h4 class="news_detail">
+                                 <span class = "date"><%= newsDatas[i].month %>.&nbsp;<%= newsDatas[i].year %>&nbsp;</span>
+                                <%= newsDatas[i].detail %>
+                            </h4>
+                        </li>
+                        <%}%>
+                    </ul>
+                    <br/>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- banner part start-->
+<!-- section class="banner_part">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 col-lg-6  lab-intro-pic col-xl-5">
+                <div class="about_img">
+                    <img src="<%= lab_photo %>" alt="" style="border-radius: 5%">
+                </div>
+            </div>
+        </div>
+    </div>
+</section --->
+<!-- banner part start-->
+ <%if(newsDatas.length>0){%>
+
+<%}%>
+
+<!--COOPERATION-->
+<!-- section class="service_part section_padding home_banner">
+    <div class="container">
+        <div class="col-lg-12">
+            <div class="single_service_text">
+                <h2>Cooperators </h2>
+            </div>
+
+            <div class="company">
+                <%for(let i=0;i<cooperationsData.company.length;i++){%>
+                        <img src="<%= cooperationsData.company[i].image %>" class="company-logo" alt="...">
+                <%}%>
+            </div>
+
+            <div class="school">
+                <%for(let i=0;i<cooperationsData.university.length;i++){%>
+                    <img src="<%= cooperationsData.university[i].image %>" class="school-logo" alt="...">
+                <%}%>
+            </div>
+        </div>
+    </div>
+</section ---->

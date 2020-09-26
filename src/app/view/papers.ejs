@@ -1,0 +1,62 @@
+<!-- breadcrumb start-->
+<section class="breadcrumb paper_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb_iner text-center">
+                    <div class="breadcrumb_iner_item">
+                        <h2>Selected Publications<br/>
+                            (2014-Date)</h2>
+                        <p>Home<span>-</span>Publications</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- breadcrumb start-->
+
+<!--================Blog Area =================-->
+<section class="blog_area section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="blog_right_sidebar">
+                    <aside class="single_sidebar_widget post_category_widget">
+                        <h4 class="widget_title">Category</h4>
+                        <ul class="list cat-list">
+                            <% if(category.length>0){%>
+                                <% for(let i=0;i<category.length;i++){%>
+                                    <li>
+                                        <a href="<%= '?category='+ category[i].category %>" class="d-flex">
+                                            <p><%= category[i].category %>(<%= category[i].number %>)</p>
+                                        </a>
+                                    </li>
+                                <% } %>
+                            <% } %>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+            <div class="col-lg-9 mb-5 mb-lg-0">
+                <div class="blog_left_sidebar">
+                    <% if(papers.length>0){%>
+                        <% for(let i=0;i<papers.length;i++){%>
+                            <article class="blog_item">
+                                <div class="blog_details">
+                                    <a class="d-inline-block" href="#">
+                                        <h4 class="papertitle"><%= papers[i].title %></h4>
+                                    </a>
+                                    <h5><%= papers[i].author %></h5>
+                                    <h5><%= papers[i].conference %>, <%= papers[i].time %>.</h5>
+                                </div>
+                            </article>
+                        <%}%>
+                    <%}%>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--================Blog Area =================-->
